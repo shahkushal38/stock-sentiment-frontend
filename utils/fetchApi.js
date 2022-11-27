@@ -4,6 +4,7 @@ export const baseUrl = 'https://stockvisualizer-api.herokuapp.com'
 
 export const fetchApi = async (method, api, body) => {
     const response = {}
+    console.log(body);
     try {
         if (method == 'post') {
             response = await axios.post(baseUrl + api,

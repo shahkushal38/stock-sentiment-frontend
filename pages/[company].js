@@ -43,6 +43,7 @@ export default function Company() {
                 else
                     tempCount.positive += 1
             });
+            console.log(response.data);
             setCount(tempCount)
         })();
 
@@ -54,6 +55,7 @@ export default function Company() {
                     end_str: "2019-11-06",//date.endDate
                     stock: company
                 });
+            console.log(response.data);
             setStockDetails(response.data)
         })();
     }, [company, dates])

@@ -24,7 +24,7 @@ export const BarContainer = styled(Box)(({ theme }) => ({
 
 export const DesktopGaugeContainer = styled(Box)(({ theme }) => ({
     width: 500,
-    height: 370,
+    height: 400,
     // border: "1px solid yellow",
     [theme.breakpoints.down(700)]: {
         display: "none"
