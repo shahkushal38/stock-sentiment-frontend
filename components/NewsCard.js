@@ -14,25 +14,27 @@ export default function NewsCard(props) {
             <CardContent>
                 <Box display="flex" justifyContent="space-between">
                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                        {props.company}
+                        {props.stock}
                     </Typography>
                     <ConfidenceBox sx={props.confidence > 0.5 ?
                         { backgroundColor: '#CCFFCC', color: '#66CC33' } :
                         { backgroundColor: '#ffcccb', color: '#CC3333' }}>
                         {props.confidence}
                         {
-                            props.confidence > 0.5 ? <TrendingUpIcon /> :
+                            props.status == 'positive' ? <TrendingUpIcon /> :
                                 <TrendingDownIcon />
                         }
                     </ConfidenceBox>
                 </Box>
                 <Typography variant="body2">
-                    {props.headline}
+                    {props.news}
                 </Typography>
             </CardContent>
             <CardActions>
                 <Box display="flex" justifyContent="space-between" alignItems="center" width="100%" margin="0 0.4em">
-                    <Button size="small">Read News</Button>
+                    <a href={props.url} rel="noopener noreferrer" target="_blank">
+                        <Button size="small">Read News</Button>
+                    </a>
                     <Typography variant='subtitle2'>
                         {props.date}
                     </Typography>

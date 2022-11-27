@@ -3,11 +3,14 @@ import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 
 export const CustomCard = styled(Card)(({ theme }) => ({
-    width: 400,
+    minWidth: 400,
     maxHeight: 450,
     margin: '1em',
-    [theme.breakpoints.down("md")]: {
-
+    [theme.breakpoints.down(850)]: {
+        minWidth: 300
+    },
+    [theme.breakpoints.down(600)]: {
+        minWidth: 200
     }
 }))
 

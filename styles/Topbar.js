@@ -5,11 +5,12 @@ import { Typography } from '@mui/material'
 export const StyledTopbar = styled(Box)(({ theme }) => ({
     position: 'fixed',
     height: '70px',
-    width: 'inherit',
+    width: '100%',
     backgroundColor: '#6666FF',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    zIndex: 1,
     [theme.breakpoints.down("md")]: {
 
     }

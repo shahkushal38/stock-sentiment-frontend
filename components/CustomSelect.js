@@ -25,9 +25,8 @@ export default function CustomSelect() {
                 label="Stock"
                 onChange={handleChange}
             >
-                <MenuItem value={"Tata"}>Tata</MenuItem>
-                <MenuItem value={"Bajaj"}>Bajaj</MenuItem>
-                <MenuItem value={"Reliance"}>Reliance</MenuItem>
+                <MenuItem value={"HDFC Bank"}>HDFC Bank</MenuItem>
+                <MenuItem value={"Sun Pharma"}>Sun Pharma</MenuItem>
             </Select>
         </StyledFormControl>
     );
