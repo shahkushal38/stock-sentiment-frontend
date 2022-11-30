@@ -20,9 +20,9 @@ export const ContextProvider = ({ children }) => {
         dispatch({ type: 'SET_END_DATE', payload: date });
     }
 
-    // useEffect(() => {
-    //     console.log(dates);
-    // }, [dates])
+    useEffect(() => {
+        console.log(dates);
+    }, [dates])
 
     return (
         <StockContext.Provider value={{

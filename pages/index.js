@@ -5,8 +5,9 @@ import Topbar from '../components/Topbar'
 import NewsCard from '../components/NewsCard'
 import MobileHomeIcon from '../components/MobileHomeIcon'
 import { fetchApi } from '../utils/fetchApi';
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { useState } from 'react'
+import { StockContext } from '../context/context'
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -34,19 +35,20 @@ theme = responsiveFontSizes(theme);
 
 export default function Home() {
   const [news, setNews] = useState([]);
+  const { dates } = useContext(StockContext)
 
   useEffect(() => {
     (async () => {
-      const response = await fetchApi('post',
+      const response = await fetchApi('get',
         '/getNews',
         {
-          from_str: "2015-01-01",
-          end_str: "2019-11-06",
+          from_str: dates.startDate,
+          end_str: dates.endDate,
           stock: ""
         });
       setNews(response?.data?.data);
     })();
-  }, []);
+  }, [dates]);
 
   return (
     <ThemeProvider theme={theme}>

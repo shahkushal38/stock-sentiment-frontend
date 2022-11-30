@@ -28,34 +28,39 @@ export default function Company() {
 
     useEffect(() => {
         (async () => {
-            const response = await fetchApi('post',
+            const response = await fetchApi('get',
                 '/getNews',
                 {
-                    from_str: "2015-01-01",//date.startDate
-                    end_str: "2019-11-06",//date.endDate
+                    from_str: dates.startDate,
+                    end_str: dates.endDate,
                     stock: company
                 });
             setNews(response?.data?.data);
-            let tempCount = { positive: 0, negative: 0 }
-            response?.data?.data.forEach(item => {
-                if (item?.status == "negative")
-                    tempCount.negative += 1
-                else
-                    tempCount.positive += 1
-            });
-            console.log(response.data);
-            setCount(tempCount)
+            // let tempCount = { positive: 0, negative: 0 }
+            // response?.data?.data.forEach(item => {
+            //     if (item?.status == "negative")
+            //         tempCount.negative += 1
+            //     else
+            //         tempCount.positive += 1
+            // });
+            // console.log(response.data);
+            // setCount(tempCount)
         })();
 
         (async () => {
-            const response = await fetchApi('post',
+            const response = await fetchApi('get',
                 '/findSentiment',
                 {
-                    from_str: "2015-01-01",//date.startDate
-                    end_str: "2019-11-06",//date.endDate
+                    from_str: dates.startDate,
+                    end_str: dates.endDate,
                     stock: company
                 });
             console.log(response.data);
+            let tempCount = {
+                positive: response.data.positiveNewsCount,
+                negative: response.data.totalNews - response.data.positiveNewsCount
+            }
+            setCount(tempCount);
             setStockDetails(response.data)
         })();
     }, [company, dates])

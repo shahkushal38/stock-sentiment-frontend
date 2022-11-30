@@ -5,14 +5,14 @@ const contextReducer = (state, action) => {
             console.log(action.payload);
             return {
                 startDate: action.payload,
-                ...state
+                endDate: state.endDate
             };
 
         case 'SET_END_DATE':
             console.log(action.payload);
             return {
                 endDate: action.payload,
-                ...state
+                startDate: state.startDate
             };
 
         default:

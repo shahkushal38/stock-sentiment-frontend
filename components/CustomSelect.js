@@ -26,7 +26,9 @@ export default function CustomSelect() {
                 onChange={handleChange}
             >
                 <MenuItem value={"HDFC Bank"}>HDFC Bank</MenuItem>
-                <MenuItem value={"Sun Pharma"}>Sun Pharma</MenuItem>
+                <MenuItem value={"Tata Power"}>Tata Power</MenuItem>
+                <MenuItem value={"Reliance"}>Reliance</MenuItem>
+                <MenuItem value={"TCS"}>TCS</MenuItem>
             </Select>
         </StyledFormControl>
     );
