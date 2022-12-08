@@ -57,8 +57,8 @@ export default function Company() {
                 });
             console.log(response.data);
             let tempCount = {
-                positive: response.data.positiveNewsCount,
-                negative: response.data.totalNews - response.data.positiveNewsCount
+                positive: response.data?.positiveNewsCount,
+                negative: response.data?.totalNews - response.data?.positiveNewsCount
             }
             setCount(tempCount);
             setStockDetails(response.data)

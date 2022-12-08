@@ -44,6 +44,8 @@ export default function Home() {
         {
           from_str: dates.startDate,
           end_str: dates.endDate,
+          // from_str: "2022-07-01",
+          // end_str: "2022-07-31",
           stock: ""
         });
       setNews(response?.data?.data);

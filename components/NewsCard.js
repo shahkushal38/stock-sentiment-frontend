@@ -19,10 +19,12 @@ export default function NewsCard(props) {
                     <ConfidenceBox sx={props.confidence > 0.5 ?
                         { backgroundColor: '#CCFFCC', color: '#66CC33' } :
                         { backgroundColor: '#ffcccb', color: '#CC3333' }}>
-                        {props.confidence}
+                        <Typography variant="body2">
+                            {props.confidence}
+                        </Typography>
                         {
-                            props.status == 'positive' ? <TrendingUpIcon /> :
-                                <TrendingDownIcon />
+                            props.status == 'positive' ? <TrendingUpIcon sx={{ fontSize: "1em" }} /> :
+                                <TrendingDownIcon sx={{ fontSize: "1em" }} />
                         }
                     </ConfidenceBox>
                 </Box>

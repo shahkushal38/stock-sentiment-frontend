@@ -4,8 +4,9 @@ import contextReducer from './contextReducer';
 import { useEffect } from 'react';
 
 const initialState = {
-    startDate: dayjs().subtract(2, 'day').format('YYYY-MM-DD'),
-    endDate: dayjs().format('YYYY-MM-DD'),
+    // startDate: dayjs().subtract(2, 'day').format('YYYY-MM-DD'),
+    startDate: dayjs("2022-07-01").format('YYYY-MM-DD'),
+    endDate: dayjs("2022-07-31").format('YYYY-MM-DD'),
 };
 
 export const StockContext = createContext(initialState);
